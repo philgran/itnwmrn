@@ -31,7 +31,7 @@
     <script type="text/javascript" charset="utf-8">
     
     $(function(){
-        $('.centered').height(window.innerHeight);
+        $('.centered').height(window.innerHeight-window.innerHeight*.47);
     });
     setTimeout(function(){
         navigator.geolocation.getCurrentPosition(function(geoposition){
@@ -55,14 +55,14 @@
             $('h1').animate({
                 opacity: 0
             },{
-                duration: 1500,
+                duration: 1000,
                 complete: function() {
                     $('h1').css('opacity', 1).text('We are.');
                     setTimeout(function(){
                         $('h1').animate({
                             opacity: 0
                         },{
-                            duration: 1500,
+                            duration: 1000,
                             complete: function() {
                                 $('h1').css('opacity', 1).text('ALWAYS.');
                             }
