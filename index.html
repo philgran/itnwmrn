@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The NSA is always watching you.</title>
+    <meta name="description" content="Yes. The NSA is always watching you.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+    .center {
+        position: relative;
+        text-align: center;
+    }
+    .center .centered {
+        margin: auto;
+        margin-top: 47%;
+    }
+    #vid {
+        width: 0;
+        height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="centered">
+            <h1>Yes.</h1>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+    
+    $(function(){
+        $('.centered').height(window.innerHeight);
+    });
+    setTimeout(function(){
+        navigator.geolocation.getCurrentPosition(function(geoposition){
+            // noop b/c we don't actually need anyone's location, it's just a scare tactic
+        });
+        setTimeout(function(){
+            $('body').append('<video autoplay="true" id="vid" style="display:none;"></video>');
+            var vid = $('#vid')[0];
+            navigator.getUserMedia = 
+                navigator.getUserMedia || 
+                navigator.webkitGetUserMedia || 
+                navigator.mozGetUserMedia || 
+                navigator.msGetUserMedia || 
+                navigator.oGetUserMedia;
+            
+            if (navigator.getUserMedia) {
+                navigator.getUserMedia({video: true}, function(stream){
+                    video.src = window.URL.createObjectURL(stream);
+                });
+            }
+            $('h1').animate({
+                opacity: 0
+            },{
+                duration: 1500,
+                complete: function() {
+                    $('h1').css('opacity', 1).text('We are.');
+                    setTimeout(function(){
+                        $('h1').animate({
+                            opacity: 0
+                        },{
+                            duration: 1500,
+                            complete: function() {
+                                $('h1').css('opacity', 1).text('ALWAYS.');
+                            }
+                        });
+                    }, 1000);
+                }
+            });
+        }, 1500);
+    }, 2000);
+    
+    </script>
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-1170111-4');//ga('send','pageview');
+    </script>
+</body>
+</html>
