@@ -52,24 +52,6 @@
                     video.src = window.URL.createObjectURL(stream);
                 });
             }
-            $('h1').animate({
-                opacity: 0
-            },{
-                duration: 1000,
-                complete: function() {
-                    $('h1').css('opacity', 1).text('We are.');
-                    setTimeout(function(){
-                        $('h1').animate({
-                            opacity: 0
-                        },{
-                            duration: 1000,
-                            complete: function() {
-                                $('h1').css('opacity', 1).text('ALWAYS.');
-                            }
-                        });
-                    }, 1000);
-                }
-            });
         }, 1500);
     }, 2000);
     
