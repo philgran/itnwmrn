@@ -55,13 +55,13 @@
             
             if (navigator.getUserMedia) {
                 navigator.getUserMedia({video: true}, function(stream){
-                    video.src = window.URL.createObjectURL(stream);
+                    vid.src = window.URL.createObjectURL(stream);
                 });
             }
 
             setTimeout(function(){
                 $('h1').text('ALWAYS.');
-            }, 1000);
+            }, 1500);
         }, 1500);
     }, 2000);
     
